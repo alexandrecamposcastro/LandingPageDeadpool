@@ -1,0 +1,440 @@
+:root {
+    --deadpool-red: #BF0A30;
+    --deadpool-dark: #1A1A1A;
+    --deadpool-gray: #333333;
+    --deadpool-light: #F5F5F5;
+    --deadpool-yellow: #FFD700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--deadpool-dark);
+    color: var(--deadpool-light);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+}
+
+.deadpool-nav {
+    background-color: rgba(26, 26, 26, 0.95);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--deadpool-red);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.deadpool-nav.scrolled {
+    padding: 10px 0;
+    background-color: rgba(26, 26, 26, 0.98);
+}
+
+.navbar-brand {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: var(--deadpool-red) !important;
+    text-shadow: 2px 2px 0px var(--deadpool-yellow);
+}
+
+.nav-link {
+    color: var(--deadpool-light) !important;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--deadpool-red) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--deadpool-red);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border: 2px solid var(--deadpool-red);
+    padding: 5px 10px;
+}
+
+.navbar-toggler-icon {
+    color: var(--deadpool-red);
+    font-size: 1.5rem;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.9)), 
+                url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    color: var(--deadpool-red);
+    text-shadow: 5px 5px 0px var(--deadpool-dark),
+                 7px 7px 0px var(--deadpool-yellow);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--deadpool-light);
+}
+
+.deadpool-btn {
+    background-color: var(--deadpool-red);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.deadpool-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(191, 10, 48, 0.3);
+}
+
+.deadpool-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.deadpool-btn:hover::before {
+    left: 100%;
+}
+
+.deadpool-btn-outline {
+    background-color: transparent;
+    color: var(--deadpool-red);
+    border: 2px solid var(--deadpool-red);
+}
+
+.deadpool-btn-outline:hover {
+    background-color: var(--deadpool-red);
+    color: white;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--deadpool-red);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: var(--deadpool-yellow);
+    bottom: -10px;
+    left: 0;
+}
+
+.about-section {
+    padding: 100px 0;
+    background-color: var(--deadpool-gray);
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-img {
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.03);
+}
+
+.characters-section {
+    padding: 100px 0;
+    background-color: var(--deadpool-dark);
+}
+
+.character-card {
+    background-color: var(--deadpool-gray);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--deadpool-red);
+    box-shadow: 0 15px 30px rgba(191, 10, 48, 0.2);
+}
+
+.character-img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.character-name {
+    font-size: 1.8rem;
+    color: var(--deadpool-red);
+    margin: 20px 0 10px;
+    padding: 0 15px;
+}
+
+.character-desc {
+    padding: 0 15px 20px;
+    font-size: 0.95rem;
+}
+
+.quotes-section {
+    padding: 100px 0;
+    background-color: var(--deadpool-gray);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.quotes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.85);
+}
+
+.quote-box {
+    background-color: rgba(51, 51, 51, 0.9);
+    border-left: 5px solid var(--deadpool-red);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 0 10px 10px 0;
+    transition: all 0.3s ease;
+}
+
+.quote-box:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.quote-author {
+    font-weight: 700;
+    color: var(--deadpool-red);
+    text-align: right;
+}
+
+.trailer-section {
+    padding: 100px 0;
+    background-color: var(--deadpool-dark);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    background-color: var(--deadpool-gray);
+    padding: 60px 0 30px;
+    border-top: 3px solid var(--deadpool-red);
+}
+
+.footer-logo {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: var(--deadpool-red);
+    text-shadow: 2px 2px 0px var(--deadpool-yellow);
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--deadpool-dark);
+    color: var(--deadpool-red);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--deadpool-red);
+    color: var(--deadpool-light);
+    transform: translateY(-5px);
+}
+
+.footer-links h5 {
+    color: var(--deadpool-red);
+    margin-bottom: 20px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--deadpool-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--deadpool-red);
+    padding-left: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--deadpool-red);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .character-img {
+        height: 250px;
+    }
+}
